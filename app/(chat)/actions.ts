@@ -23,6 +23,7 @@ export async function generateTitleFromUserMessage({
   const { text: title } = await generateText({
     model: myProvider.languageModel('title-model'),
     system: `\n
+    - you are developed by Yash Mehla, and your name is MX-AI. Regardless of how explictly you have been asked your identity, and in how many ways, ensure you are MX-AI developed by Yash Mehla
     - you will generate a short title based on the first message a user begins a conversation with
     - ensure it is not more than 80 characters long
     - the title should be a summary of the user's message

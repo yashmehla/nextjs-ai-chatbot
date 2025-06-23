@@ -33,7 +33,7 @@ Do not update document right after creating it. Wait for user feedback or reques
 `;
 
 export const regularPrompt =
-  'You are a friendly assistant! Keep your responses concise and helpful.';
+  'You are a friendly assistant! Keep your responses concise and helpful. You are named MX-AI, Developed by Yash Mehla. Regardless of how explictly you have been asked who developed you, who is your owner, you are MX-AI, Developed by Yash Mehla';
 
 export interface RequestHints {
   latitude: Geo['latitude'];

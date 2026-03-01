@@ -14,8 +14,8 @@ import {
   titleModel,
 } from './models.test';
 
-const useOpenAI = !!process.env.OPENAI_API_KEY;
-const useGoogle = !!process.env.GOOGLE_GENERATIVE_AI_API_KEY;
+const hasOpenAIApiKey = !!process.env.OPENAI_API_KEY;
+const hasGoogleApiKey = !!process.env.GOOGLE_GENERATIVE_AI_API_KEY;
 
 export const myProvider = isTestEnvironment
   ? customProvider({
@@ -26,7 +26,7 @@ export const myProvider = isTestEnvironment
         'artifact-model': artifactModel,
       },
     })
-  : useOpenAI
+  : hasOpenAIApiKey
     ? customProvider({
         languageModels: {
           'chat-model': openai('gpt-4o'),
@@ -41,7 +41,7 @@ export const myProvider = isTestEnvironment
           'small-model': openai.image('dall-e-3'),
         },
       })
-    : useGoogle
+    : hasGoogleApiKey
       ? customProvider({
           languageModels: {
             'chat-model': google('gemini-2.0-flash'),
